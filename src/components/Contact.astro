@@ -1,0 +1,447 @@
+---
+// Sección de contacto interactiva para captar clientes en Codeva Studio
+---
+
+<!-- Sección principal de Contacto -->
+<!--
+    Contexto de clases de Tailwind CSS:
+    - relative: Posicionamiento relativo
+    - z-10: Capa visual superior
+    - max-w-[92rem]: Ancho máximo consistente con Hero, Pilares y Servicios
+    - mx-auto: Centrado horizontal
+    - px-6 sm:px-10 lg:px-16: Relleno lateral responsivo
+    - py-24: Espaciado vertical para separación limpia
+-->
+<section id="contacto" class="relative z-10 max-w-[92rem] mx-auto w-full px-6 sm:px-10 lg:px-16 py-24">
+    <!-- Encabezado de la Sección -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - flex flex-col items-center text-center: Centrado vertical y horizontal del contenido
+        - mb-16: Margen inferior para separar del contenido de las tarjetas
+    -->
+    <div class="flex flex-col items-center text-center mb-16">
+        <!-- Etiqueta de categoría o subtítulo -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - inline-flex: Permite que el contenedor se ajuste al contenido
+            - items-center gap-2: Centrado vertical y espacio entre elementos
+            - px-3.5 py-1.5: Relleno interno para comodidad visual
+            - rounded-lg: Bordes redondeados para suavizar la apariencia
+            - bg-slate-900/80: Fondo oscuro semitransparente para contraste
+            - border border-slate-800: Borde sutil para definición
+            - text-purple-400: Color del texto en morado para resaltar
+            - font-mono text-xs: Tipografía monoespaciada y tamaño pequeño para estilo técnico
+            - mb-4: Margen inferior para separar del título principal
+            - shadow-sm: Sombra ligera para dar profundidad
+        -->                                       
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-purple-400 font-mono text-xs mb-4 shadow-sm">
+            <span>Get In Touch // Codeva Studio</span>
+        </div>
+        <!-- Título principal de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-3xl sm:text-4xl lg:text-5xl: Tamaño de fuente responsivo
+            - font-extrabold: Fuente en negrita para destacar el título
+            - tracking-tight: Espaciado entre letras ajustado para una apariencia compacta
+            - text-white: Color del texto blanco para contraste con el fondo oscuro
+            - mb-4: Margen inferior para separar del párrafo descriptivo
+        -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            Iniciemos tu Próximo Proyecto
+        </h2>
+        <!-- Párrafo descriptivo de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-base sm:text-lg: Tamaño de fuente responsivo
+            - text-slate-400: Color del texto en gris para contraste
+            - max-w-2xl: Ancho máximo para mantener la legibilidad
+            - font-normal: Fuente normal para el párrafo
+            - leading-relaxed: Espaciado entre líneas relajado para mejorar la lectura
+        -->
+        <p class="text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed">
+            ¿Tienes una idea en mente o necesitas escalar tu arquitectura de software? Escríbenos y analicemos tu solución a medida.
+        </p>
+    </div>
+    <!-- Grilla principal de Contacto (Formulario e Información) -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - grid grid-cols-1 lg:grid-cols-12: Configura una grilla con 1 columna en pantallas pequeñas y 12 columnas en pantallas grandes
+        - gap-12: Espacio uniforme entre las columnas
+        - items-start: Alinea los elementos al inicio verticalmente
+        - max-w-6xl: Ancho máximo para mantener la consistencia visual
+        - mx-auto: Centrado horizontal
+    -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+        <!-- Columna Izquierda: Tarjeta de Información Directa (5 columnas) -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - lg:col-span-5: Ocupa 5 de las 12 columnas en pantallas grandes
+            - flex flex-col gap-6: Contenedor flexible vertical con espacio entre elementos
+        -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+            <!-- Tarjeta de Información de Contacto -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - p-8: Relleno interno amplio para comodidad visual
+                - rounded-2xl: Bordes redondeados para suavizar la apariencia
+                - bg-slate-900/60: Fondo oscuro semitransparente para contraste
+                - border border-slate-800/80: Borde sutil para definición
+                - backdrop-blur-md: Efecto de desenfoque de fondo para profundidad
+                - shadow-xl: Sombra pronunciada para resaltar la tarjeta
+                - flex flex-col gap-6: Contenedor flexible vertical con espacio entre elementos
+            -->
+            <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl flex flex-col gap-6">
+                <!-- Encabezado de la Tarjeta -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - text-xl: Tamaño de fuente grande para el título
+                    - font-bold: Fuente en negrita para resaltar el título
+                    - text-white: Color del texto blanco para contraste con el fondo oscuro
+                    - tracking-tight: Espaciado entre letras ajustado para una apariencia compacta
+                    - mb-2: Margen inferior para separar del párrafo descriptivo
+                -->
+                <h3 class="text-xl font-bold text-white tracking-tight mb-2">
+                    Información de Contacto
+                </h3>
+                <!-- Párrafo descriptivo de la tarjeta -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - text-slate-400: Color del texto gris claro para contraste con el fondo oscuro
+                    - text-sm: Tamaño de fuente pequeño para el cuerpo del texto
+                    - leading-relaxed: Altura de línea relajada para mejorar la legibilidad
+                -->
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Estamos listos para colaborar en proyectos de alto impacto. Elige el canal que prefieras.
+                </p>
+                <!-- Canal: Correo Electrónico -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - flex items-start gap-4: Contenedor flexible horizontal con espacio entre icono y texto
+                    - pt-4: Relleno superior para separar del contenido anterior
+                    - border-t border-slate-800/80: Línea superior sutil para definir visualmente la sección
+                -->
+                <div class="flex items-start gap-4 pt-4 border-t border-slate-800/80">
+                    <!-- Icono de Correo Electrónico -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - w-10 h-10: Tamaño fijo cuadrado para el icono
+                        - rounded-lg: Bordes redondeados para suavizar la apariencia
+                        - bg-slate-800/80: Fondo oscuro semitransparente para contraste
+                        - border border-slate-700/50: Borde sutil para definición
+                        - flex items-center justify-center: Centrado perfecto del icono
+                        - text-purple-400: Color del icono en morado para resaltar
+                        - shrink-0: Evita que el icono se reduzca en tamaño al ajustar el contenedor
+                    -->
+                    <div class="w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/50 flex items-center justify-center text-purple-400 shrink-0">
+                        <!-- Icono de sobre de correo electrónico -->
+                        <!--
+                            Contexto de clases de Tailwind CSS:
+                            - w-5 h-5: Tamaño del icono
+                            - fill-current: Permite que el icono herede el color del contenedor padre (text-purple-400)
+                        -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ejemplo de icono de sobre de correo electrónico (puedes reemplazarlo con cualquier SVG que desees) -->
+                            <!--
+                                Contexto de clases de Tailwind CSS:
+                                - stroke-linecap="round": Bordes redondeados en las líneas del SVG
+                                - stroke-linejoin="round": Uniones redondeadas en las esquinas del SVG
+                                - stroke-width="2": Grosor de línea consistente para visibilidad
+                            -->
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <!-- Contenedor de Texto del Correo Electrónico -->
+                    <div>
+                        <!-- Etiqueta de categoría o subtítulo -->
+                        <!--
+                            Contexto de clases de Tailwind CSS:
+                            - block: Muestra el elemento como un bloque para ocupar toda la línea
+                            - text-xs: Tamaño de fuente extra pequeño para el subtítulo
+                            - font-mono: Tipografía monoespaciada para estilo técnico
+                            - text-slate-500: Color del texto gris para contraste con el fondo oscuro
+                            - uppercase: Convierte el texto a mayúsculas para resaltar
+                        -->
+                        <span class="block text-xs font-mono text-slate-500 uppercase">Email</span>
+                        <!-- Correo Electrónico -->
+                        <!--
+                            Contexto de clases de Tailwind CSS:
+                            - text-sm: Tamaño de fuente pequeño para el texto del correo
+                            - font-semibold: Estilo de fuente en negrita para resaltar
+                            - text-slate-200: Color del texto gris claro para contraste con el fondo oscuro
+                            - hover:text-purple-400: Color del texto morado al pasar el ratón por encima
+                            - transition-colors: Transición suave entre colores
+                        -->
+                        <a href="mailto:alejandro.suarez.dev@gmail.com" class="text-sm font-semibold text-slate-200 hover:text-purple-400 transition-colors">
+                            alejandro.suarez.dev@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <!-- Canal: Modalidad de Trabajo -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - flex items-start gap-4: Contenedor flexible horizontal con espacio entre icono y texto
+                    - pt-4: Relleno superior para separar del contenido anterior
+                    - border-t border-slate-800/80: Línea superior sutil para definir visualmente la sección
+                -->
+                <div class="flex items-start gap-4 pt-4 border-t border-slate-800/80">
+                    <!-- Icono de Modalidad de Trabajo -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - w-10 h-10: Tamaño fijo cuadrado para el icono
+                        - rounded-lg: Bordes redondeados para suavizar la apariencia
+                        - bg-slate-800/80: Fondo oscuro semitransparente para contraste
+                        - border border-slate-700/50: Borde sutil para definición
+                        - flex items-center justify-center: Centrado perfecto del icono
+                        - text-purple-400: Color del icono en morado para resaltar
+                        - shrink-0: Evita que el icono se reduzca en tamaño al ajustar el contenedor
+                    -->
+                    <div class="w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/50 flex items-center justify-center text-purple-400 shrink-0">
+                        <!-- Icono de globo terráqueo para representar la modalidad de trabajo global/remota -->
+                        <!--
+                            Contexto de clases de Tailwind CSS:
+                            - w-5 h-5: Tamaño del icono
+                            - fill-current: Permite que el icono herede el color del contenedor padre (text-purple-400)
+                        -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ejemplo de icono de globo terráqueo (puedes reemplazarlo con cualquier SVG que desees) -->
+                            <!--
+                                Contexto de clases de Tailwind CSS:
+                                - stroke-linecap="round": Bordes redondeados en las líneas del SVG
+                                - stroke-linejoin="round": Uniones redondeadas en las esquinas del SVG
+                                - stroke-width="2": Grosor de línea consistente para visibilidad
+                            -->
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                    </div>
+                    <!-- Contenedor de Texto de Modalidad de Trabajo -->
+                    <div>
+                        <!-- Etiqueta de categoría o subtítulo -->
+                        <!--
+                            Contexto de clases de Tailwind CSS:
+                            - block: Muestra el elemento como un bloque para ocupar toda la línea
+                            - text-xs: Tamaño de fuente extra pequeño para el subtítulo
+                            - font-mono: Tipografía monoespaciada para estilo técnico
+                            - text-slate-500: Color del texto gris para contraste con el fondo oscuro
+                            - uppercase: Convierte el texto a mayúsculas para resaltar  
+                        -->
+                        <span class="block text-xs font-mono text-slate-500 uppercase">Modalidad</span>
+                        <!-- Modalidad de Trabajo -->
+                        <!--
+                            Contexto de clases de Tailwind CSS:
+                            - text-sm: Tamaño de fuente pequeño para el texto de la modalidad
+                            - font-semibold: Estilo de fuente en negrita para resaltar
+                            - text-slate-200: Color del texto gris claro para contraste con el fondo oscuro
+                        -->
+                        <span class="text-sm font-semibold text-slate-200">
+                            Remoto / Desarrollo Global
+                        </span>
+                    </div>
+                </div>
+                <!-- Estado de Disponibilidad -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - flex items-center gap-3: Contenedor flexible horizontal con espacio entre el indicador y el texto
+                    - pt-4: Relleno superior para separar del contenido anterior
+                    - border-t border-slate-800/80: Línea superior sutil para definir visualmente la sección
+                -->
+                <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+                    <!-- Indicador de disponibilidad (punto verde pulsante) -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - w-3 h-3: Tamaño fijo cuadrado para el indicador
+                        - rounded-full: Forma circular para el indicador
+                        - bg-emerald-500: Color verde para indicar disponibilidad
+                        - animate-pulse: Animación de pulso para llamar la atención
+                    -->
+                    <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <!-- Texto de disponibilidad -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - text-xs: Tamaño de fuente extra pequeño para el texto de disponibilidad
+                        - font-mono: Tipografía monoespaciada para estilo técnico
+                        - text-emerald-400: Color del texto en verde para resaltar la disponibilidad
+                        - font-medium: Fuente con peso medio para un estilo equilibrado
+                    -->
+                    <span class="text-xs font-mono text-emerald-400 font-medium">
+                        Disponible para nuevos proyectos
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <!-- Columna Derecha: Formulario de Mensaje (7 columnas) -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - lg:col-span-7: Ocupa 7 de las 12 columnas en pantallas grandes
+        -->
+        <div class="lg:col-span-7">
+            <!-- Formulario de Contacto -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - p-8: Relleno interno amplio para comodidad visual
+                - rounded-2xl: Bordes redondeados para suavizar la apariencia
+                - bg-slate-900/60: Fondo oscuro semitransparente para contraste
+                - border border-slate-800/80: Borde sutil para definición
+                - backdrop-blur-md: Efecto de desenfoque de fondo para profundidad
+                - shadow-xl: Sombra pronunciada para resaltar el formulario
+                - flex flex-col gap-6: Contenedor flexible vertical con espacio entre elementos
+            -->
+            <form class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl flex flex-col gap-6">
+                <!-- Campo: Nombre -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - flex flex-col gap-2: Contenedor flexible vertical con espacio entre la etiqueta y el campo de entrada
+                -->
+                <div class="flex flex-col gap-2">
+                    <!-- Etiqueta del campo de nombre -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - text-xs: Tamaño de fuente extra pequeño para la etiqueta
+                        - font-mono: Tipografía monoespaciada para estilo técnico
+                        - text-slate-300: Color del texto gris claro para contraste con el fondo oscuro
+                        - uppercase: Convierte el texto a mayúsculas para resaltar
+                        - tracking-wider: Espaciado entre letras más amplio para mejorar la legibilidad
+                    -->
+                    <label for="name" class="text-xs font-mono text-slate-300 uppercase tracking-wider">
+                        Nombre Completo
+                    </label>
+                    <!-- Campo de entrada para el nombre -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - w-full: Ocupa todo el ancho del contenedor
+                        - px-4 py-3: Relleno interno para comodidad visual
+                        - rounded-xl: Bordes redondeados para suavizar la apariencia
+                        - bg-slate-950/80: Fondo oscuro semitransparente para contraste
+                        - border border-slate-800/80: Borde sutil para definición
+                        - text-white: Color del texto blanco para contraste con el fondo oscuro
+                        - placeholder-slate-600: Color del texto del placeholder en gris para contraste
+                        - focus:outline-none: Elimina el contorno predeterminado al enfocar
+                        - focus:border-purple-500/80: Cambia el color del borde a morado al enfocar
+                        - focus:ring-1 focus:ring-purple-500/80: Añade un anillo de enfoque morado al enfocar
+                        - transition-all duration-300: Transición suave para todos los cambios de estilo al enfocar
+                        - text-sm: Tamaño de fuente pequeño para el texto del campo de entrada
+                    -->
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Ej. Diego Morales"
+                        required
+                        class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-white placeholder-slate-600 focus:outline-none focus:border-purple-500/80 focus:ring-1 focus:ring-purple-500/80 transition-all duration-300 text-sm"
+                    />
+                </div>
+                <!-- Campo: Correo Electrónico -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - flex flex-col gap-2: Contenedor flexible vertical con espacio entre la etiqueta y el campo de entrada
+                -->
+                <div class="flex flex-col gap-2">
+                    <!-- Etiqueta del campo de correo electrónico -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - text-xs: Tamaño de fuente extra pequeño para la etiqueta
+                        - font-mono: Tipografía monoespaciada para estilo técnico
+                        - text-slate-300: Color del texto gris claro para contraste con el fondo oscuro
+                        - uppercase: Convierte el texto a mayúsculas para resaltar
+                        - tracking-wider: Espaciado entre letras más amplio para mejorar la legibilidad
+                    -->
+                    <label for="email" class="text-xs font-mono text-slate-300 uppercase tracking-wider">
+                        Correo Electrónico
+                    </label>
+                    <!-- Campo de entrada para el correo electrónico -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - w-full: Ocupa todo el ancho del contenedor
+                        - px-4 py-3: Relleno interno para comodidad visual
+                        - rounded-xl: Bordes redondeados para suavizar la apariencia
+                        - bg-slate-950/80: Fondo oscuro semitransparente para contraste
+                        - border border-slate-800/80: Borde sutil para definición
+                        - text-white: Color del texto blanco para contraste con el fondo oscuro
+                        - placeholder-slate-600: Color del texto del placeholder en gris para contraste
+                        - focus:outline-none: Elimina el contorno predeterminado al enfocar
+                        - focus:border-purple-500/80: Cambia el color del borde a morado al enfocar
+                        - focus:ring-1 focus:ring-purple-500/80: Añade un anillo de enfoque morado al enfocar
+                        - transition-all duration-300: Transición suave para todos los cambios de estilo al enfocar
+                        - text-sm: Tamaño de fuente pequeño para el texto del campo de entrada
+                        - required: Campo obligatorio para enviar el formulario 
+                    -->
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="tu@empresa.com"
+                        required
+                        class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-white placeholder-slate-600 focus:outline-none focus:border-purple-500/80 focus:ring-1 focus:ring-purple-500/80 transition-all duration-300 text-sm"
+                    />
+                </div>
+                <!-- Campo: Mensaje -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - flex flex-col gap-2: Contenedor flexible vertical con espacio entre la etiqueta y el campo de texto
+                -->
+                <div class="flex flex-col gap-2">
+                    <!-- Etiqueta del campo de mensaje -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - text-xs: Tamaño de fuente extra pequeño para la etiqueta
+                        - font-mono: Tipografía monoespaciada para estilo técnico
+                        - text-slate-300: Color del texto gris claro para contraste con el fondo oscuro
+                        - uppercase: Convierte el texto a mayúsculas para resaltar
+                        - tracking-wider: Espaciado entre letras más amplio para mejorar la legibilidad
+                    -->
+                    <label for="message" class="text-xs font-mono text-slate-300 uppercase tracking-wider">
+                        Detalles del Proyecto
+                    </label>
+                    <!-- Campo de texto para el mensaje -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - w-full: Ocupa todo el ancho del contenedor
+                        - px-4 py-3: Relleno interno para comodidad visual
+                        - rounded-xl: Bordes redondeados para suavizar la apariencia
+                        - bg-slate-950/80: Fondo oscuro semitransparente para contraste
+                        - border border-slate-800/80: Borde sutil para definición
+                        - text-white: Color del texto blanco para contraste con el fondo oscuro
+                        - placeholder-slate-600: Color del texto del placeholder en gris para contraste
+                        - focus:outline-none: Elimina el contorno predeterminado al enfocar
+                        - focus:border-purple-500/80: Cambia el color del borde a morado al enfocar
+                        - focus:ring-1 focus:ring-purple-500/80: Añade un anillo de enfoque morado al enfocar
+                        - transition-all duration-300: Transición suave para todos los cambios de estilo al enfocar
+                        - text-sm: Tamaño de fuente pequeño para el texto del campo de texto
+                        - resize-none: Desactiva la capacidad de redimensionar el área de texto para mantener la consistencia del diseño
+                        - required: Campo obligatorio para enviar el formulario
+                    -->
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="4" 
+                        placeholder="Describe brevemente lo que necesitas construir o escalar..."
+                        required
+                        class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-white placeholder-slate-600 focus:outline-none focus:border-purple-500/80 focus:ring-1 focus:ring-purple-500/80 transition-all duration-300 text-sm resize-none"
+                    ></textarea>
+                </div>
+                <!-- Botón de Envío -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - w-full: Ocupa todo el ancho del contenedor
+                    - py-3.5: Relleno vertical para comodidad visual
+                    - rounded-xl: Bordes redondeados para suavizar la apariencia
+                    - font-semibold: Fuente en negrita para resaltar el texto del botón
+                    - text-white: Color del texto blanco para contraste con el fondo oscuro
+                    - bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600: Gradiente de color de izquierda a derecha para un efecto visual atractivo
+                    - hover:opacity-90: Cambia la opacidad al pasar el ratón por encima para indicar interactividad
+                    - transition-all duration-300: Transición suave para todos los cambios de estilo al interactuar
+                    - shadow-[0_0_25px_rgba(124,58,237,0.3)]: Sombra personalizada para dar profundidad al botón
+                    - hover:shadow-[0_0_35px_rgba(124,58,237,0.5)]: Aumenta la sombra al pasar el ratón por encima para resaltar la interactividad
+                    - text-sm: Tamaño de fuente pequeño para el texto del botón
+                    - mt-2: Margen superior para separar del contenido anterior
+                -->
+                <button 
+                    type="submit" 
+                    class="w-full py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:opacity-90 transition-all duration-300 shadow-[0_0_25px_rgba(124,58,237,0.3)] hover:shadow-[0_0_35px_rgba(124,58,237,0.5)] text-sm mt-2"
+                >
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
