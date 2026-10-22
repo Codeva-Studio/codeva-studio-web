@@ -1,12 +1,10 @@
 ---
-// ==========================================
-// COMPONENTE: Services.astro
-// ==========================================
-// Sección de servicios y tecnologías de Codeva Studio (Enfoque Especializado - 4 Tarjetas)
+// Sección de código para importar componentes y definir variables (Frontmatter)
 
+// Importamos el componente de tarjeta de servicio 
 import ServiceCard from '../components/ServiceCard.astro';
 
-// Datos estructurados con el stack especializado en 4 áreas
+// Estructura de datos limpia y mantenible para los servicios ofrecidos por Codeva Studio
 const servicesData = [
     {
         title: "Desarrollo Desktop",
@@ -46,20 +44,55 @@ const servicesData = [
     - py-24: Espacio vertical amplio
 -->
 <section id="servicios" class="relative z-10 max-w-[92rem] mx-auto w-full px-6 sm:px-10 lg:px-16 py-24">
-    
     <!-- Encabezado de la Sección -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - flex flex-col items-center text-center: Centrado vertical y horizontal del contenido
+        - mb-16: Margen inferior para separar del contenido de las tarjetas
+    -->
     <div class="flex flex-col items-center text-center mb-16">
+        <!-- Etiqueta de categoría o subtítulo -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - inline-flex: Permite que el contenedor se ajuste al contenido
+            - items-center gap-2: Centrado vertical y espacio entre elementos
+            - px-3.5 py-1.5: Relleno interno para comodidad visual
+            - rounded-lg: Bordes redondeados para suavizar la apariencia
+            - bg-slate-900/80: Fondo oscuro semitransparente para contraste
+            - border border-slate-800: Borde sutil para definición
+            - text-purple-400: Color del texto en morado para resaltar
+            - font-mono text-xs: Tipografía monoespaciada y tamaño pequeño para estilo técnico
+            - mb-4: Margen inferior para separar del título principal
+            - shadow-sm: Sombra ligera para dar profundidad
+        -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-purple-400 font-mono text-xs mb-4 shadow-sm">
             <span>Core Services // Codeva Studio</span>
         </div>
+        <!-- Título principal de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-3xl sm:text-4xl lg:text-5xl: Tamaño de fuente responsivo
+            - font-extrabold: Fuente en negrita para destacar el título
+            - tracking-tight: Espaciado entre letras ajustado para una apariencia compacta
+            - text-white: Color del texto blanco para contraste con el fondo oscuro
+            - mb-4: Margen inferior para separar del párrafo descriptivo
+        -->
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
             Soluciones Tecnológicas a tu Medida
         </h2>
+        <!-- Párrafo descriptivo de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-base sm:text-lg: Tamaño de fuente responsivo
+            - text-slate-400: Color del texto gris claro para legibilidad
+            - max-w-2xl: Ancho máximo controlado
+            - font-normal: Fuente con peso normal
+            - leading-relaxed: Altura de línea relajada para mejorar la legibilidad
+        -->
         <p class="text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed">
             Combinamos ingeniería avanzada y un stack tecnológico versátil para convertir ideas complejas en productos digitales sólidos.
         </p>
     </div>
-
     <!-- Grilla de Servicios (4 columnas en pantallas grandes) -->
     <!--
         Contexto de clases de Tailwind CSS:
@@ -70,14 +103,31 @@ const servicesData = [
         - gap-6 lg:gap-8: Espacio simétrico entre tarjetas
     -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Iteración sobre los datos de los servicios para generar tarjetas dinámicamente -->
         {
+            // Mapeo de cada servicio en el array servicesData para renderizar un componente ServiceCard
             servicesData.map((service) => (
+                // Renderizado del componente ServiceCard con props dinámicas
+                // Se pasa el título, descripción, tecnologías y un slot para el icono SVG
                 <ServiceCard 
                     title={service.title} 
                     description={service.description}
                     technologies={service.technologies}
                 >
+                    // Inyección del icono SVG en el slot 'icon' del componente ServiceCard
+                    /*
+                        Contexto de clases de Tailwind CSS:
+                        - w-6 h-6: Tamaño del icono
+                        - fill-current: Permite que el icono herede el color del contenedor padre (text-purple-400)
+                    */
                     <svg slot="icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        // Ejemplo de icono SVG dinámico basado en la propiedad 'iconSvg' del servicio
+                        /*
+                            Contexto de clases de Tailwind CSS:
+                            - stroke-linecap="round": Bordes redondeados en las líneas del SVG
+                            - stroke-linejoin="round": Uniones redondeadas en las esquinas del SVG
+                            - stroke-width="2": Grosor de línea consistente para visibilidad
+                        */
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.iconSvg}></path>
                     </svg>
                 </ServiceCard>
