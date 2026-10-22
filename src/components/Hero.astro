@@ -1,0 +1,183 @@
+<!-- Sección principal del Hero -->
+<!--
+    Contexto de clases de Tailwind CSS:
+    - relative: Posiciona el contenedor de manera relativa para elementos hijos
+    - z-10: Asegura que se muestre por encima del fondo con retícula
+    - max-w-[92rem]: Ancho máximo controlado para pantallas ultra-wide
+    - mx-auto: Centra el contenedor horizontalmente
+    - w-full: Ocupa el 100% del ancho disponible
+    - min-h-[calc(100vh-5rem)]: Altura del viewport ajustada al Navbar para evitar scroll inicial
+    - flex flex-col justify-center: Centra verticalmente el contenido
+    - px-6 sm:px-10 lg:px-16: Márgenes laterales responsivos
+    - py-12: Padding vertical equilibrado
+-->
+<section class="relative z-10 max-w-[92rem] mx-auto w-full min-h-[calc(100vh-5rem)] flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-12">
+    <!-- Grilla principal de 2 columnas equilibradas (6 y 6) -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - grid: Activa el sistema de cuadrícula
+        - grid-cols-1: Una columna por defecto en dispositivos móviles
+        - lg:grid-cols-12: Divide el espacio en 12 columnas en pantallas grandes
+        - gap-12 lg:gap-16: Espacio amplio y simétrico entre texto e imagen
+        - items-center: Alineación vertical centrada de ambos bloques
+    -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Columna Izquierda: Información de Presentación (6 columnas) -->
+        <!-- 
+            Contexto de clases de Tailwind CSS:
+            - lg:col-span-6: Ocupa 6 columnas en pantallas grandes
+            - flex flex-col items-start text-left: Alineación vertical y horizontal del contenido
+        -->
+        <div class="lg:col-span-6 flex flex-col items-start text-left">
+            <!-- Etiqueta técnica superior -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - inline-flex: Crea un contenedor en línea
+                - items-center: Alinea los elementos verticalmente
+                - gap-2: Espacio entre los elementos
+                - px-3.5 py-1.5: Padding horizontal y vertical
+                - rounded-lg: Bordes redondeados
+                - bg-slate-900/80: Fondo con transparencia
+                - border border-slate-800: Borde con color y grosor
+                - text-purple-400: Texto con color morado
+                - font-mono text-xs: Fuente monoespaciada y tamaño pequeño
+                - mb-6: Margen inferior
+                - shadow-sm: Sombra pequeña
+            --> 
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-purple-400 font-mono text-xs mb-6 shadow-sm">
+                <!-- Punto de estado animado -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - w-2 h-2: Tamaño del punto
+                    - rounded-full: Forma circular
+                    - bg-purple-500: Color morado
+                    - animate-pulse: Animación de pulso para indicar actividad
+                -->
+                <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+                <span>Codeva Studio // Software Architecture</span>
+            </div>
+            <!-- Título Principal -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - text-4xl sm:text-5xl lg:text-6xl: Tamaño de fuente responsivo
+                - font-extrabold: Fuente en negrita
+                - tracking-tight: Espaciado de letras ajustado
+                - text-white: Texto con color blanco
+                - leading-[1.12]: Altura de línea personalizada
+                - mb-6: Margen inferior
+            -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6">
+                Ingeniería de Software & Arquitectura de Alto Rendimiento
+            </h1>
+            <!-- Descripción -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - text-base sm:text-lg: Tamaño de fuente responsivo
+                - text-slate-400: Color de texto gris claro
+                - font-normal: Fuente con peso normal
+                - max-w-xl: Ancho máximo del contenedor para mejorar la legibilidad
+                - leading-relaxed: Altura de línea relajada para mejor lectura
+                - mb-8: Margen inferior
+            -->
+            <p class="text-base sm:text-lg text-slate-400 font-normal max-w-xl leading-relaxed mb-8">
+                Diseñamos y construimos sistemas escalables, seguros y optimizados para potenciar la infraestructura digital de tu empresa.
+            </p>
+            <!-- Botones de Acción -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - flex flex-wrap: Contenedor flexible que permite envolver elementos en varias líneas
+                - items-center: Alinea verticalmente los elementos hijos
+                - gap-4: Espacio entre los botones
+            -->
+            <div class="flex flex-wrap items-center gap-4">
+                <!-- Botón Primario: Explorar Soluciones -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - px-7 py-3.5: Padding horizontal y vertical
+                    - rounded-full: Bordes completamente redondeados para apariencia de píldora
+                    - text-sm font-semibold: Tamaño de fuente pequeño y peso seminegrita
+                    - text-white: Color de texto blanco
+                    - bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600: Fondo con degradado horizontal
+                    - hover:opacity-90: Cambia la opacidad al pasar el cursor
+                    - transition-all duration-300: Transición suave para todos los cambios de estilo
+                    - shadow-[0_0_25px_rgba(124,58,237,0.4)]: Sombra personalizada para efecto de profundidad
+                    - hover:shadow-[0_0_35px_rgba(124,58,237,0.6)]: Aumenta la sombra al pasar el cursor
+                -->
+                <a 
+                    href="#servicios" 
+                    class="px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:opacity-90 transition-all duration-300 shadow-[0_0_25px_rgba(124,58,237,0.4)] hover:shadow-[0_0_35px_rgba(124,58,237,0.6)]"
+                >
+                    Explorar Soluciones
+                </a>
+                <!-- Botón Secundario: Contactar Equipo -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - px-7 py-3.5: Padding horizontal y vertical
+                    - rounded-full: Bordes completamente redondeados para apariencia de píldora
+                    - text-sm font-semibold: Tamaño de fuente pequeño y peso seminegrita
+                    - text-slate-300: Color de texto gris claro
+                    - bg-slate-900/60: Fondo gris oscuro con transparencia
+                    - border border-slate-800: Borde gris oscuro
+                    - hover:text-white: Cambia el color del texto a blanco al pasar el cursor
+                    - hover:border-slate-700: Cambia el color del borde a gris más claro al pasar el cursor
+                    - transition-all duration-300: Transición suave para todos los cambios de estilo
+                -->
+                <a 
+                    href="#contacto" 
+                    class="px-7 py-3.5 rounded-full text-sm font-semibold text-slate-300 bg-slate-900/60 border border-slate-800 hover:text-white hover:border-slate-700 transition-all duration-300"
+                >
+                    Contactar Equipo
+                </a>
+            </div>
+        </div>
+        <!-- Columna Derecha: Ilustración 3D Protagonista (6 columnas) -->
+        <!-- 
+            Contexto de clases de Tailwind CSS:
+            - lg:col-span-6: Ocupa 6 columnas en pantallas grandes
+            - flex justify-center lg:justify-end: Centra la imagen en móviles y la alinea a la derecha en pantallas grandes
+            - relative: Posiciona el contenedor de manera relativa para elementos hijos
+        -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end relative">
+            <!-- Contenedor con efecto de brillo difuso de fondo -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - relative: Posiciona el contenedor de manera relativa para elementos hijos
+                - group: Permite aplicar estilos a elementos hijos cuando el contenedor está en estado hover
+                - w-full max-w-xl lg:max-w-2xl: Ancho máximo controlado para pantallas grandes
+                - flex justify-center lg:justify-end items-center: Centra la imagen en móviles y la alinea a la derecha en pantallas grandes
+            -->
+            <div class="relative group w-full max-w-xl lg:max-w-2xl flex justify-center lg:justify-end items-center">
+                <!-- Capa de brillo difuso con transición de opacidad al pasar el cursor -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - absolute: Posiciona la capa de manera absoluta dentro del contenedor relativo
+                    - -inset-4: Expande la capa 1rem (16px) fuera del contenedor en todas las direcciones
+                    - bg-gradient-to-r from-purple-600/40 to-indigo-600/40: Fondo con degradado horizontal de colores morados y azulados con transparencia
+                    - rounded-3xl: Bordes redondeados grandes para suavizar la apariencia
+                    - blur-3xl: Aplica un desenfoque intenso para crear un efecto de resplandor difuso
+                    - opacity-30: Establece la opacidad inicial al 30%
+                    - group-hover:opacity-50: Aumenta la opacidad al 50% cuando el contenedor está en estado hover
+                    - transition duration-500: Aplica una transición suave de 500ms para los cambios de estilo
+                -->
+                <div class="absolute -inset-4 bg-gradient-to-r from-purple-600/40 to-indigo-600/40 rounded-3xl blur-3xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                <!-- Imagen 3D con tamaño optimizado y presencia imponente -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - relative: Posiciona la imagen de manera relativa dentro del contenedor
+                    - w-full: Ocupa el 100% del ancho disponible
+                    - lg:scale-110: Escala la imagen al 110% en pantallas grandes para un efecto más impactante
+                    - object-contain: Mantiene la proporción de la imagen sin recortarla
+                    - drop-shadow-[0_20px_40px_rgba(168,85,247,0.3)]: Aplica una sombra personalizada para dar profundidad a la imagen
+                    - transition-transform duration-500: Aplica una transición suave de 500ms a las transformaciones de escala
+                    - group-hover:scale-[1.13]: Aumenta la escala al 113% cuando el contenedor está en estado hover para un efecto dinámico
+                -->
+                <img 
+                    src="/assets/images/hero-architecture.png" 
+                    alt="Arquitectura de Alto Rendimiento Codeva Studio" 
+                    class="relative w-full lg:scale-110 object-contain drop-shadow-[0_20px_40px_rgba(168,85,247,0.3)] transition-transform duration-500 group-hover:scale-[1.13]"
+                />
+            </div>
+        </div>
+        
+    </div>
+</section>
