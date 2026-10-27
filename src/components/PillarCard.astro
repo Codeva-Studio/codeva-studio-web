@@ -1,0 +1,94 @@
+---
+// Sección de código para importar componentes y definir variables (Frontmatter)
+
+// Definimos la interfaz TypeScript para declarar las propiedades (Props) que recibirá este componente
+interface Props {
+    title: string;
+    description: string;
+    iconName?: string; // Opcional, por si prefieres pasar componentes de iconos o rutas
+}
+
+// Extraemos las propiedades 'title' y 'description' que nos pasen al utilizar este componente
+const { title, description } = Astro.props;
+---
+
+<!-- Contenedor principal de la tarjeta con efectos de hover y bordes sutiles -->
+<!--
+    Contexto de clases de Tailwind CSS:
+    - relative: Posiciona el contenedor de manera relativa
+    - group: Habilita los modificadores group-hover en elementos internos
+    - p-8: Relleno interno generoso para que el contenido respire
+    - rounded-2xl: Bordes redondeados elegantes
+    - bg-slate-900/60: Fondo oscuro semitransparente
+    - border border-slate-800/80: Borde sutil para definir la tarjeta
+    - backdrop-blur-md: Efecto de vidrio esmerilado (frosted glass)
+    - transition-all duration-300: Transición suave para animaciones
+    - hover:border-purple-500/50: Cambia el borde a un tono morado al pasar el cursor
+    - hover:-translate-y-1: Eleva ligeramente la tarjeta al hacer hover para dar efecto de profundidad
+    - shadow-xl: Sombra profunda general
+-->
+<div class="relative group p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md transition-all duration-300 hover:border-purple-500/50 hover:-translate-y-1 shadow-xl">
+    <!-- Resplandor interno sutil en hover -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - absolute inset-0: Cubre todo el contenedor padre
+        - rounded-2xl: Bordes redondeados para coincidir con la tarjeta
+        - bg-gradient-to-b from-purple-500/5 to-transparent: Degradado vertical sutil
+        - opacity-0: Inicialmente invisible
+        - group-hover:opacity-100: Se vuelve visible al pasar el cursor por la tarjeta
+        - transition-opacity duration-300: Transición suave de opacidad
+        - pointer-events-none: Evita que interfiera con la interacción del usuario
+    -->
+    <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+    <!-- Contenedor del Icono -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - w-14 h-14: Tamaño fijo cuadrado
+        - rounded-xl: Bordes redondeados para el contenedor del icono
+        - bg-slate-800/80: Fondo contrastante para el icono
+        - border border-slate-700/50: Borde sutil
+        - flex items-center justify-center: Centra el icono perfectamente
+        - text-purple-400: Color del icono
+        - mb-6: Margen inferior para separarlo del texto
+        - group-hover:scale-110: Efecto de escala en el icono al pasar el cursor por la tarjeta
+        - transition-transform duration-300: Suaviza la animación de escala
+    -->
+    <div class="w-14 h-14 rounded-xl bg-slate-800/80 border border-slate-700/50 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner">
+        <!-- Slot para inyectar el icono (SVG o componente externo) -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - w-6 h-6: Tamaño del icono
+            - fill-current: Permite que el icono herede el color del contenedor padre (text-purple-400)
+        -->
+        <slot name="icon">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+        </slot>
+    </div>
+    <!-- Título de la tarjeta -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - text-xl: Tamaño de fuente grande
+        - font-bold: Fuente en negrita para resaltar el título
+        - text-white: Color del texto blanco para buen contraste
+        - tracking-tight: Espaciado entre letras ajustado
+        - mb-3: Margen inferior para separar del párrafo
+        - group-hover:text-purple-300: Cambia el color del título a púrpura claro al pasar el cursor por la tarjeta
+        - transition-colors duration-300: Suaviza la transición de color
+    -->
+    <h3 class="text-xl font-bold text-white tracking-tight mb-3 group-hover:text-purple-300 transition-colors duration-300">
+        {title}
+    </h3>
+    <!-- Descripción de la tarjeta -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - text-slate-400: Color de texto gris claro para la descripción
+        - text-sm: Tamaño de fuente pequeño
+        - leading-relaxed: Altura de línea relajada para mejor lectura
+        - font-normal: Fuente con peso normal
+    -->
+    <p class="text-slate-400 text-sm leading-relaxed font-normal">
+        {description}
+    </p>
+</div>
