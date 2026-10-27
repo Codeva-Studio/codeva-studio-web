@@ -2,24 +2,24 @@
 // Sección de código para importar componentes y definir variables (Frontmatter)
 
 // Contenedor de la sección de pilares tecnológicos de Codeva Studio
-import PillarCard from '../components/PillarCard.astro';
+import PillarCard from '../components/cards/PillarCard.astro';
 
 // Estructura de datos limpia y mantenible para los pilares
 const pillarsData = [
     {
-        title: "Arquitectura Escalable",
-        description: "Diseñamos bases de código modulares y robustas preparadas para soportar crecimiento exponencial sin comprometer el rendimiento.",
-        iconPath: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+        title: "Soluciones con propósito",
+        description: "Entendemos tu proyecto y tu mercado antes de programar. No creamos código por crear; construimos herramientas que resuelven problemas reales.",
+        iconPath: "M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M12 7a5 5 0 1 0 5 5 M13 3.055a9 9 0 1 0 7.941 7.94 M15 6v3h3l3 -3h-3v-3l-3 3 M15 9l-3 3"
     },
     {
-        title: "Alto Rendimiento",
-        description: "Optimización extrema en cada capa del software, garantizando tiempos de respuesta mínimos y una experiencia de usuario impecable.",
+        title: "Velocidad y estabilidad",
+        description: "Cuidamos la optimización en cada pantalla y proceso para que la experiencia de tus usuarios sea rápida, fluida y sin interrupciones.",
         iconPath: "M13 10V3L4 14h7v7l9-11h-7z"
     },
     {
-        title: "Seguridad & Resiliencia",
-        description: "Implementamos estándares estrictos de protección de datos, encriptación y sistemas tolerantes a fallos desde el núcleo.",
-        iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+        title: "Estructura sólida y escalable",
+        description: "Trabajamos con bases organizadas y tecnologías modernas. Así tu sistema puede crecer y recibir nuevas funciones sin tener que rehacerlo todo.",
+        iconPath: "M12 4l-8 4l8 4l8 -4l-8 -4 M4 12l8 4l8 -4 M4 16l8 4l8 -4"
     }
 ];
 ---
@@ -57,7 +57,7 @@ const pillarsData = [
             - shadow-sm: Sombra ligera para dar profundidad
         -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-purple-400 font-mono text-xs mb-4 shadow-sm">
-            <span>Core Pillars // Codeva Studio</span>
+            <span>Nuestros Pilares // Codeva Studio</span>
         </div>
         <!-- Título principal de la sección -->
         <!--
@@ -69,7 +69,7 @@ const pillarsData = [
             - mb-4: Margen inferior para separar del párrafo descriptivo
         -->
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Pilares de Nuestra Ingeniería
+            Los cimientos de lo que hacemos
         </h2>
         <!-- Párrafo descriptivo de la sección -->
         <!--
@@ -81,7 +81,7 @@ const pillarsData = [
             - leading-relaxed: Espaciado entre líneas relajado para mejorar la lectura
         -->
         <p class="text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed">
-            Los fundamentos técnicos que garantizan la excelencia y durabilidad en cada solución que desarrollamos.
+            Nuestros principios de trabajo para asegurar que el software que desarrollamos aporte valor real a tu negocio.
         </p>
     </div>
     <!-- Grilla de 3 columnas para las tarjetas -->
