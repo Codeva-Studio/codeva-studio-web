@@ -367,7 +367,8 @@
                 - shadow-xl: Sombra pronunciada para resaltar el formulario
                 - flex flex-col gap-6: Contenedor flexible vertical con espacio entre elementos
             -->
-            <form class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl flex flex-col gap-6">
+            <form name="contacto-codeva" method="POST" data-netlify="true" action="/" class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl flex flex-col gap-6">                
+                <input type="hidden" name="form-name" value="contacto-codeva" />
                 <!-- Campo: Nombre -->
                 <!--
                     Contexto de clases de Tailwind CSS:
