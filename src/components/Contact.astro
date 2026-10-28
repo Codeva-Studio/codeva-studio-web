@@ -367,23 +367,23 @@
                 - shadow-xl: Sombra pronunciada para resaltar el formulario
                 - flex flex-col gap-6: Contenedor flexible vertical con espacio entre elementos
             -->
-            <form name="contacto-codeva" method="POST" data-netlify="true" action="/" class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl flex flex-col gap-6">                
-                <input type="hidden" name="form-name" value="contacto-codeva" />
-                <!-- Campo: Nombre -->
-                <!--
-                    Contexto de clases de Tailwind CSS:
-                    - flex flex-col gap-2: Contenedor flexible vertical con espacio entre la etiqueta y el campo de entrada
-                -->
-                <div class="flex flex-col gap-2">
-                    <!-- Etiqueta del campo de nombre -->
+                <form name="contacto-codeva" method="POST" data-netlify="true" netlify-honeypot="bot-field"class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl flex flex-col gap-6">
+                    <input type="hidden" name="form-name" value="contacto-codeva" />
+                    <!-- Campo: Nombre -->
                     <!--
                         Contexto de clases de Tailwind CSS:
-                        - text-xs: Tamaño de fuente extra pequeño para la etiqueta
-                        - font-mono: Tipografía monoespaciada para estilo técnico
-                        - text-slate-300: Color del texto gris claro para contraste con el fondo oscuro
-                        - uppercase: Convierte el texto a mayúsculas para resaltar
-                        - tracking-wider: Espaciado entre letras más amplio para mejorar la legibilidad
+                        - flex flex-col gap-2: Contenedor flexible vertical con espacio entre la etiqueta y el campo de entrada
                     -->
+                    <div class="flex flex-col gap-2">
+                        <!-- Etiqueta del campo de nombre -->
+                        <!--
+                            Contexto de clases de Tailwind CSS:
+                            - text-xs: Tamaño de fuente extra pequeño para la etiqueta
+                            - font-mono: Tipografía monoespaciada para estilo técnico
+                            - text-slate-300: Color del texto gris claro para contraste con el fondo oscuro
+                            - uppercase: Convierte el texto a mayúsculas para resaltar
+                            - tracking-wider: Espaciado entre letras más amplio para mejorar la legibilidad
+                        -->
                     <label for="name" class="text-xs font-mono text-slate-300 uppercase tracking-wider">
                         Nombre Completo
                     </label>
@@ -501,6 +501,10 @@
                         class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-white placeholder-slate-600 focus:outline-none focus:border-purple-500/80 focus:ring-1 focus:ring-purple-500/80 transition-all duration-300 text-sm resize-none"
                     ></textarea>
                 </div>
+                <!-- Mensaje de éxito opcional -->
+                <div id="form-status" class="hidden p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono text-center">
+                    ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+                </div>
                 <!-- Botón de Envío -->
                 <!--
                     Contexto de clases de Tailwind CSS:
@@ -519,6 +523,7 @@
                 -->
                 <button 
                     type="submit" 
+                    id="submit-btn"
                     class="w-full py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 hover:opacity-90 transition-all duration-300 shadow-[0_0_25px_rgba(124,58,237,0.3)] hover:shadow-[0_0_35px_rgba(124,58,237,0.5)] text-sm mt-2"
                 >
                     Enviar Mensaje
