@@ -1,0 +1,136 @@
+---
+// Sección de código para importar componentes y definir variables (Frontmatter)
+
+// Definimos la interfaz TypeScript para declarar las propiedades (Props) que recibirá este componente
+interface Props {
+    title: string;
+    description: string;
+    technologies: string[];
+}
+
+// Extraemos las propiedades 'title', 'description' y 'technologies' que nos pasen al utilizar este componente
+const { title, description, technologies } = Astro.props;
+---
+
+<!-- Contenedor principal de la tarjeta de servicio -->
+<!--
+    Contexto de clases de Tailwind CSS:
+    - relative: Posiciona el contenedor de manera relativa
+    - group: Habilita los modificadores group-hover en elementos internos
+    - p-8: Relleno interno generoso
+    - rounded-2xl: Bordes redondeados elegantes
+    - bg-slate-900/60: Fondo oscuro semitransparente
+    - border border-slate-800/80: Borde sutil para definir la tarjeta
+    - backdrop-blur-md: Efecto de vidrio esmerilado
+    - transition-all duration-300: Transición suave para animaciones
+    - hover:border-purple-500/50: Cambia el borde a un tono morado al pasar el cursor
+    - hover:-translate-y-1: Eleva ligeramente la tarjeta al hacer hover
+    - shadow-xl: Sombra profunda general
+    - flex flex-col justify-between: Distribuye el contenido verticalmente para alinear los tech-tags abajo
+-->
+<div class="relative group p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md transition-all duration-300 hover:border-purple-500/50 hover:-translate-y-1 shadow-xl flex flex-col justify-between">
+    <!-- Resplandor interno sutil en hover -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - absolute inset-0: Cubre todo el contenedor padre
+        - rounded-2xl: Bordes redondeados para coincidir con la tarjeta
+        - bg-gradient-to-b from-purple-500/5 to-transparent: Degradado vertical sutil
+        - opacity-0: Inicialmente invisible
+        - group-hover:opacity-100: Se vuelve visible al pasar el cursor por la tarjeta
+        - transition-opacity duration-300: Transición suave de opacidad
+        - pointer-events-none: Evita que interfiera con la interacción del usuario
+    -->
+    <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+    <div>
+        <!-- Contenedor del Icono -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - w-14 h-14: Tamaño fijo cuadrado
+            - rounded-xl: Bordes redondeados para el contenedor del icono
+            - bg-slate-800/80: Fondo contrastante para el icono
+            - border border-slate-700/50: Borde sutil
+            - flex items-center justify-center: Centra el icono perfectamente
+            - text-purple-400: Color del icono
+            - mb-6: Margen inferior para separarlo del texto
+            - group-hover:scale-110: Efecto de escala en el icono al pasar el cursor por la tarjeta
+            - transition-transform duration-300: Suaviza la animación de escala
+        -->
+        <div class="w-14 h-14 rounded-xl bg-slate-800/80 border border-slate-700/50 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform duration-300 shadow-inner">
+            <!-- Slot para inyectar el icono (SVG o componente externo) -->
+            <slot name="icon">
+                <!-- Slot para inyectar el icono (SVG o componente externo) -->
+                <!--
+                    Contexto de clases de Tailwind CSS:
+                    - w-6 h-6: Tamaño del icono
+                    - fill-current: Permite que el icono herede el color del contenedor padre (text-purple-400)
+                -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Ejemplo de icono por defecto (puedes reemplazarlo con cualquier SVG que desees) -->
+                    <!--
+                        Contexto de clases de Tailwind CSS:
+                        - stroke-linecap="round": Bordes redondeados en las líneas del SVG
+                        - stroke-linejoin="round": Uniones redondeadas en las esquinas del SVG
+                        - stroke-width="2": Grosor de línea consistente para visibilidad
+                    -->
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+            </slot>
+        </div>
+        <!-- Título del servicio -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-xl: Tamaño de fuente grande
+            - font-bold: Fuente en negrita para destacar el título
+            - text-white: Color del texto blanco para contraste con el fondo oscuro
+            - tracking-tight: Espaciado entre letras ajustado para una apariencia compacta
+            - mb-3: Margen inferior para separar del párrafo descriptivo
+            - group-hover:text-purple-300: Cambia el color del título a morado al pasar el cursor por la tarjeta
+            - transition-colors duration-300: Suaviza la transición de color al hacer hover
+        -->
+        <h3 class="text-xl font-bold text-white tracking-tight mb-3 group-hover:text-purple-300 transition-colors duration-300">
+            {title}
+        </h3>
+        <!-- Descripción del servicio -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-slate-400: Color de texto gris claro para la descripción
+            - text-sm: Tamaño de fuente pequeño para el cuerpo del texto
+            - leading-relaxed: Altura de línea relajada para mejorar la legibilidad
+            - font-normal: Fuente con peso normal para un estilo equilibrado
+            - mb-6: Margen inferior para separar del contenedor de tecnologías
+        -->
+        <p class="text-slate-400 text-sm leading-relaxed font-normal mb-6">
+            {description}
+        </p>
+    </div>
+    <!-- Contenedor de Tecnologías (Badges) -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - flex flex-wrap: Permite que los elementos internos se ajusten y envuelvan en múltiples líneas si es necesario
+        - gap-2: Espacio uniforme entre cada badge de tecnología
+        - pt-4: Relleno superior para separar del contenido anterior
+        - border-t border-slate-800/80: Línea superior sutil para definir visualmente la sección de tecnologías
+    -->
+    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
+        <!-- Iteración sobre el array de tecnologías para generar badges dinámicamente -->
+        {
+            // Mapeo de cada tecnología en el array 'technologies' para renderizar un span con estilo de badge
+            technologies.map((tech) => (
+                // Badge individual para cada tecnología
+                /**
+                 * Contexto de clases de Tailwind CSS:
+                 * - px-3 py-1: Relleno interno horizontal y vertical para un tamaño cómodo y legible
+                 * - rounded-md: Bordes redondeados para un estilo moderno y suave
+                 * - bg-slate-800/80: Fondo oscuro semitransparente para contraste con el texto
+                 * - border border-slate-700/50: Borde sutil para definir el contorno del badge
+                 * - text-slate-300: Color de texto gris claro para legibilidad
+                 * - font-mono text-xs: Tipografía monoespaciada y tamaño pequeño para un estilo técnico
+                 * - shadow-sm: Sombra ligera para dar profundidad y resaltar el badge
+                 */
+                <span class="px-3 py-1 rounded-md bg-slate-800/80 border border-slate-700/50 text-slate-300 font-mono text-xs shadow-sm">
+                    {tech}
+                </span>
+            ))
+        }
+    </div>
+</div>

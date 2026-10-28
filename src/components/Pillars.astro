@@ -1,0 +1,114 @@
+---
+// Sección de código para importar componentes y definir variables (Frontmatter)
+
+// Contenedor de la sección de pilares tecnológicos de Codeva Studio
+import PillarCard from '../components/cards/PillarCard.astro';
+
+// Estructura de datos limpia y mantenible para los pilares
+const pillarsData = [
+    {
+        title: "Soluciones con propósito",
+        description: "Entendemos tu proyecto y tu mercado antes de programar. No creamos código por crear; construimos herramientas que resuelven problemas reales.",
+        iconPath: "M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M12 7a5 5 0 1 0 5 5 M13 3.055a9 9 0 1 0 7.941 7.94 M15 6v3h3l3 -3h-3v-3l-3 3 M15 9l-3 3"
+    },
+    {
+        title: "Velocidad y estabilidad",
+        description: "Cuidamos la optimización en cada pantalla y proceso para que la experiencia de tus usuarios sea rápida, fluida y sin interrupciones.",
+        iconPath: "M13 10V3L4 14h7v7l9-11h-7z"
+    },
+    {
+        title: "Estructura sólida y escalable",
+        description: "Trabajamos con bases organizadas y tecnologías modernas. Así tu sistema puede crecer y recibir nuevas funciones sin tener que rehacerlo todo.",
+        iconPath: "M12 4l-8 4l8 4l8 -4l-8 -4 M4 12l8 4l8 -4 M4 16l8 4l8 -4"
+    }
+];
+---
+
+<!-- Sección principal de Pilares -->
+<!--
+    Contexto de clases de Tailwind CSS:
+    - relative: Posicionamiento relativo
+    - z-10: Asegura la capa visual sobre el fondo
+    - max-w-[92rem]: Ancho máximo controlado y consistente con el Hero
+    - mx-auto: Centrado horizontal
+    - px-6 sm:px-10 lg:px-16: Márgenes laterales responsivos
+    - py-24: Espacio vertical amplio para separar de la sección anterior y posterior
+-->
+<section id="pilares" class="relative z-10 max-w-[92rem] mx-auto w-full px-6 sm:px-10 lg:px-16 py-24">
+    <!-- Encabezado de la Sección -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - flex flex-col items-center text-center: Centrado vertical y horizontal del contenido
+        - mb-16: Margen inferior para separar del contenido de las tarjetas
+    -->
+    <div class="flex flex-col items-center text-center mb-16">
+        <!-- Etiqueta de categoría o subtítulo -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - inline-flex: Permite que el contenedor se ajuste al contenido
+            - items-center gap-2: Centrado vertical y espacio entre elementos
+            - px-3.5 py-1.5: Relleno interno para comodidad visual
+            - rounded-lg: Bordes redondeados para suavizar la apariencia
+            - bg-slate-900/80: Fondo oscuro semitransparente para contraste
+            - border border-slate-800: Borde sutil para definición
+            - text-purple-400: Color del texto en morado para resaltar
+            - font-mono text-xs: Tipografía monoespaciada y tamaño pequeño para estilo técnico
+            - mb-4: Margen inferior para separar del título principal
+            - shadow-sm: Sombra ligera para dar profundidad
+        -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-purple-400 font-mono text-xs mb-4 shadow-sm">
+            <span>Nuestros Pilares // Codeva Studio</span>
+        </div>
+        <!-- Título principal de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-3xl sm:text-4xl lg:text-5xl: Tamaño de fuente responsivo para adaptarse a diferentes pantallas
+            - font-extrabold: Fuente extremadamente negrita para destacar el título
+            - tracking-tight: Espaciado entre letras ajustado para una apariencia compacta
+            - text-white: Color del texto blanco para contraste con el fondo oscuro
+            - mb-4: Margen inferior para separar del párrafo descriptivo
+        -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            Los cimientos de lo que hacemos
+        </h2>
+        <!-- Párrafo descriptivo de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-base sm:text-lg: Tamaño de fuente responsivo para legibilidad
+            - text-slate-400: Color del texto en gris claro para contraste suave
+            - max-w-2xl: Ancho máximo para mantener la legibilidad en pantallas grandes
+            - font-normal: Fuente normal para el cuerpo del texto
+            - leading-relaxed: Espaciado entre líneas relajado para mejorar la lectura
+        -->
+        <p class="text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed">
+            Nuestros principios de trabajo para asegurar que el software que desarrollamos aporte valor real a tu negocio.
+        </p>
+    </div>
+    <!-- Grilla de 3 columnas para las tarjetas -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - grid: Sistema de cuadrícula
+        - grid-cols-1: 1 columna en móviles
+        - md:grid-cols-2: 2 columnas en tablets
+        - lg:grid-cols-3: 3 columnas exactas en pantallas grandes
+        - gap-8: Espacio simétrico de 2rem (32px) entre tarjetas
+    -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Iteración sobre los datos de los pilares para generar tarjetas dinámicamente -->
+        {
+            // Mapeo de cada pilar en el array pillarsData para renderizar un componente PillarCard
+            pillarsData.map((pillar) => (
+                // Renderizado del componente PillarCard con props dinámicas
+                // Se pasa el título, descripción y un slot para el icono SVG
+                <PillarCard 
+                    title={pillar.title} 
+                    description={pillar.description}
+                >
+                    <svg slot="icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={pillar.iconPath}></path>
+                    </svg>
+                </PillarCard>
+            ))
+        }
+    </div>
+</section>

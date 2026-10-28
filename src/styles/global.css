@@ -1,0 +1,27 @@
+/* Importa las utilidades y el motor principal de Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* Inicio de la regla de estilos para anular el autocompletado predeterminado del navegador */
+
+/* Selecciona los campos de texto cuando el navegador los autocompleta */
+input:-webkit-autofill,
+/* Aplica los mismos estilos al pasar el cursor sobre un campo de texto autocompletado */
+input:-webkit-autofill:hover, 
+/* Aplica los mismos estilos al seleccionar o hacer foco en un campo de texto autocompletado */
+input:-webkit-autofill:focus,
+/* Selecciona los bloques de texto multilínea (textarea) cuando se autocompletan */
+textarea:-webkit-autofill,
+/* Aplica los mismos estilos al pasar el cursor sobre un textarea autocompletado */
+textarea:-webkit-autofill:hover,
+/* Aplica los mismos estilos al enfocar un textarea autocompletado */
+textarea:-webkit-autofill:focus {
+  
+  /* Fuerza que el texto dentro del input sea blanco, sobreescribiendo el texto negro del navegador */
+  -webkit-text-fill-color: #ffffff !important;
+  
+  /* Proyecta una sombra interna gigante del color slate-950 (#020617) para tapar el fondo amarillo/blanco nativo del autocompletado */
+  -webkit-box-shadow: 0 0 0px 1000px #020617 inset !important; /* #020617 equivale al tono slate-950 */
+  
+  /* Retarda la animación de cambio de color del navegador por 5000 segundos para evitar que restablezca el fondo blanco */
+  transition: background-color 5000s ease-in-out 0s;
+}

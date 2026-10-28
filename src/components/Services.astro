@@ -1,0 +1,149 @@
+---
+// Sección de código para importar componentes y definir variables (Frontmatter)
+
+// Importamos el componente de tarjeta de servicio 
+import ServiceCard from '../components/cards/ServiceCard.astro';
+
+// Estructura de datos limpia y mantenible para los servicios ofrecidos por Codeva Studio
+const servicesData = [
+    {
+        title: "Desarrollo Web & Plataformas",
+        description: "Sitios web y aplicaciones de alta velocidad diseñados para captar clientes, posicionar tu marca y digitalizar los procesos clave de tu empresa.",
+        technologies: ["Astro", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
+        iconSvg: "M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0 M3.6 9h16.8 M3.6 15h16.8 M11.5 3a17 17 0 0 0 0 18 M12.5 3a17 17 0 0 1 0 18"
+    },
+    {
+        title: "Aplicaciones Móviles",
+        description: "Lleva tu negocio a la palma de la mano de tus usuarios. Creamos aplicaciones nativas fluidas, seguras y optimizadas para Android e iOS.",
+        technologies: ["Kotlin", "Java", "Android Studio"],
+        iconSvg: "M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14 M11 4h2 M12 17v.01"
+    },
+    {
+        title: "Software de Escritorio (Desktop)",
+        description: "Sistemas nativos de alto rendimiento para gestión interna, puntos de venta (POS), control de inventarios y herramientas de uso local.",
+        technologies: ["Java", "JavaFX", "Desktop Native"],
+        iconSvg: "M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10 M7 20h10 M9 16v4 M15 16v4"
+    },
+    {
+        title: "Backend, APIs & Bases de Datos",
+        description: "El motor invisible de tu software. Construimos arquitecturas de servidor sólidas, lógica de negocio eficiente y gestión de datos escalable.",
+        technologies: ["Node.js", "MySQL", "Supabase", "REST APIs"],
+        iconSvg: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+    },
+    {
+        title: "Arquitectura & Modernización",
+        description: "El motor invisible de tu software. Construimos arquitecturas de servidor sólidas, lógica de negocio eficiente y gestión de datos escalable.",
+        technologies: ["Diseño de Sistemas", "Refactorización", "Escalabilidad"],
+        iconSvg: "M6 20a2 2 0 1 0 -4 0a2 2 0 0 0 4 0 M16 4a2 2 0 1 0 -4 0a2 2 0 0 0 4 0 M16 20a2 2 0 1 0 -4 0a2 2 0 0 0 4 0 M11 12a2 2 0 1 0 -4 0a2 2 0 0 0 4 0 M21 12a2 2 0 1 0 -4 0a2 2 0 0 0 4 0 M5.058 18.306l2.88 -4.606 M10.061 10.303l2.877 -4.604 M10.065 13.705l2.876 4.6 M15.063 5.7l2.881 4.61"
+    },
+    {
+        title: "Consultoría & Auditoría Técnica",
+        description: "Evaluamos el estado de tu código, diagnosticamos problemas de rendimiento o seguridad y te guiamos en la toma de decisiones tecnológicas clave.",
+        technologies: ["Optimización", "Diagnóstico Codebase", "Asesoría"],
+        iconSvg: "M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2 M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2 M9 12h6 M9 16h6"
+    }
+];
+---
+
+<!-- Sección principal de Servicios -->
+<!--
+    Contexto de clases de Tailwind CSS:
+    - relative: Posicionamiento relativo
+    - z-10: Asegura la capa visual sobre el fondo
+    - max-w-[92rem]: Ancho máximo controlado y consistente con el resto de la web
+    - mx-auto: Centrado horizontal
+    - px-6 sm:px-10 lg:px-16: Márgenes laterales responsivos
+    - py-24: Espacio vertical amplio
+-->
+<section id="servicios" class="relative z-10 max-w-[92rem] mx-auto w-full px-6 sm:px-10 lg:px-16 py-24">
+    <!-- Encabezado de la Sección -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - flex flex-col items-center text-center: Centrado vertical y horizontal del contenido
+        - mb-16: Margen inferior para separar del contenido de las tarjetas
+    -->
+    <div class="flex flex-col items-center text-center mb-16">
+        <!-- Etiqueta de categoría o subtítulo -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - inline-flex: Permite que el contenedor se ajuste al contenido
+            - items-center gap-2: Centrado vertical y espacio entre elementos
+            - px-3.5 py-1.5: Relleno interno para comodidad visual
+            - rounded-lg: Bordes redondeados para suavizar la apariencia
+            - bg-slate-900/80: Fondo oscuro semitransparente para contraste
+            - border border-slate-800: Borde sutil para definición
+            - text-purple-400: Color del texto en morado para resaltar
+            - font-mono text-xs: Tipografía monoespaciada y tamaño pequeño para estilo técnico
+            - mb-4: Margen inferior para separar del título principal
+            - shadow-sm: Sombra ligera para dar profundidad
+        -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-purple-400 font-mono text-xs mb-4 shadow-sm">
+            <span>Lo que construimos // Codeva Studio</span>
+        </div>
+        <!-- Título principal de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-3xl sm:text-4xl lg:text-5xl: Tamaño de fuente responsivo
+            - font-extrabold: Fuente en negrita para destacar el título
+            - tracking-tight: Espaciado entre letras ajustado para una apariencia compacta
+            - text-white: Color del texto blanco para contraste con el fondo oscuro
+            - mb-4: Margen inferior para separar del párrafo descriptivo
+        -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            Soluciones tecnológicas adaptadas a tu negocio
+        </h2>
+        <!-- Párrafo descriptivo de la sección -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - text-base sm:text-lg: Tamaño de fuente responsivo
+            - text-slate-400: Color del texto gris claro para legibilidad
+            - max-w-2xl: Ancho máximo controlado
+            - font-normal: Fuente con peso normal
+            - leading-relaxed: Altura de línea relajada para mejorar la legibilidad
+        -->
+        <p class="text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed">
+            Desde el diseño de la arquitectura hasta el desarrollo e implementación. Creamos software a la medida enfocado en rendimiento, estabilidad y valor real.
+        </p>
+    </div>
+    <!-- Grilla de Servicios (4 columnas en pantallas grandes) -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - grid: Sistema de cuadrícula
+        - grid-cols-1: 1 columna en móviles
+        - md:grid-cols-2: 2 columnas en tablets
+        - lg:grid-cols-4: 4 columnas simétricas en pantallas grandes para alojar las 4 especialidades
+        - gap-6 lg:gap-8: Espacio simétrico entre tarjetas
+    -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Iteración sobre los datos de los servicios para generar tarjetas dinámicamente -->
+        {
+            // Mapeo de cada servicio en el array servicesData para renderizar un componente ServiceCard
+            servicesData.map((service) => (
+                // Renderizado del componente ServiceCard con props dinámicas
+                // Se pasa el título, descripción, tecnologías y un slot para el icono SVG
+                <ServiceCard 
+                    title={service.title} 
+                    description={service.description}
+                    technologies={service.technologies}
+                >
+                    // Inyección del icono SVG en el slot 'icon' del componente ServiceCard
+                    /*
+                        Contexto de clases de Tailwind CSS:
+                        - w-6 h-6: Tamaño del icono
+                        - fill-current: Permite que el icono herede el color del contenedor padre (text-purple-400)
+                    */
+                    <svg slot="icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        // Ejemplo de icono SVG dinámico basado en la propiedad 'iconSvg' del servicio
+                        /*
+                            Contexto de clases de Tailwind CSS:
+                            - stroke-linecap="round": Bordes redondeados en las líneas del SVG
+                            - stroke-linejoin="round": Uniones redondeadas en las esquinas del SVG
+                            - stroke-width="2": Grosor de línea consistente para visibilidad
+                        */
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.iconSvg}></path>
+                    </svg>
+                </ServiceCard>
+            ))
+        }
+    </div>
+</section>

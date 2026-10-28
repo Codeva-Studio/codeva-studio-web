@@ -1,0 +1,117 @@
+<!-- Contenedor principal que envuelve toda la barra de navegación de extremo a extremo -->
+<!--
+    Contexto de clases de Tailwind CSS:
+    - sticky: Hace que el elemento se quede fijo en la parte superior de la ventana al hacer scroll
+    - top-0: Posiciona el elemento en la parte superior de la ventana
+    - z-50: Asegura que la barra de navegación esté por encima de otros elementos con menor índice z
+    - w-full: Hace que el contenedor ocupe todo el ancho disponible
+    - backdrop-blur-md: Aplica un desenfoque al fondo detrás del contenedor para mejorar la legibilidad del contenido
+    - bg-[#0b0f17]/80: Establece un color de fondo personalizado con opacidad del 80%
+    - border-b: Agrega un borde inferior al contenedor
+    - border-slate-800/50: Define el color del borde inferior como un gris oscuro con opacidad del 50%
+-->
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-[#0b0f17]/80 border-b border-slate-800/50">
+    <!-- Contenedor interno para limitar el contenido al centro y evitar que los elementos se coloquen en los extremos en monitores grandes -->
+    <!--
+        Contexto de clases de Tailwind CSS:
+        - max-w-7xl: Limita el ancho máximo del contenedor a 7xl (1280px) la cual es una medida estándar para mantener el contenido centrado y legible en pantallas grandes
+        - mx-auto: Centra horizontalmente el contenedor dentro del elemento padre utilizando márgenes automáticos a ambos lados
+        - px-6: Agrega un padding horizontal de 1.5rem (24px) a ambos lados del contenedor
+        - h-20: Establece una altura fija de 5rem (80px) para la barra de navegación
+        - flex: Aplica un diseño flexible para alinear los elementos hijos en una sola fila
+        - items-center: Centra verticalmente los elementos hijos dentro del contenedor
+        - justify-between: Distribuye los elementos hijos con espacio entre ellos, colocando uno a la izquierda y otro a la derecha
+    -->
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- Contenedor izquierdo (Logo y Nombre del Sitio): Enlace principal con el logo y el nombre del sitio que redirige a la página de inicio -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - flex: Aplica un diseño flexible para alinear los elementos hijos en una sola fila
+            - items-center: Centra verticalmente los elementos hijos dentro del contenedor
+            - gap-3: Agrega un espacio de 0.75rem (12px) entre los elementos hijos
+            - group: Crea un grupo para aplicar estilos a los elementos hijos cuando el contenedor padre está en estado hover
+        --> 
+        <a href="/" class="flex items-center gap-3 group">
+            <!-- Contenedor del logo: Imagen del logo de Codeva Studio -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - w-9: Establece un ancho fijo de 2.25rem (36px) para la imagen del logo
+                - h-9: Establece una altura fija de 2.25rem (36px) para la imagen del logo
+                - rounded-lg: Aplica bordes redondeados al contenedor del logo
+                - object-contain: Asegura que la imagen se ajuste dentro del contenedor sin distorsionarse
+                - bg-purple-950/40: Establece un color de fondo púrpura oscuro con opacidad del 40% detrás del logo
+                - border: Agrega un borde alrededor del contenedor del logo
+                - border-purple-500/30: Define el color del borde como púrpura con opacidad del 30%
+                - p-1: Agrega un padding interno de 0.25rem (4px) alrededor de la imagen del logo
+                - group-hover:border-purple-400: Cambia el color del borde a púrpura más claro cuando el contenedor padre está en estado hover
+                - transition-colors: Aplica una transición suave a los cambios de color para mejorar la experiencia visual al interactuar con el logo
+            -->
+            <img 
+                src="/logo.png" 
+                alt="Codeva Studio Logo" 
+                class="w-9 h-9 rounded-lg object-contain bg-purple-950/40 border border-purple-500/30 p-1 group-hover:border-purple-400 transition-colors"
+            />
+            <!-- Nombre del sitio: Texto que representa el nombre de Codeva Studio -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - text-xl: Establece un tamaño de fuente grande (1.25rem) para el nombre del sitio
+                - font-bold: Aplica un estilo de fuente en negrita para resaltar el nombre del sitio
+                - tracking-tight: Ajusta el espaciado entre letras para que sea más compacto y legible
+                - text-white: Define el color del texto como blanco para un buen contraste con el fondo oscuro
+                - group-hover:text-purple-400: Cambia el color del texto a púrpura claro cuando el contenedor padre está en estado hover
+                - transition-colors: Aplica una transición suave a los cambios de color para mejorar la experiencia visual al interactuar con el nombre del sitio
+            -->
+            <span class="text-xl font-bold tracking-tight text-white group-hover:text-purple-400 transition-colors">
+                Codeva Studio
+            </span>
+        </a>
+        <!-- Contenedor central (Enlaces de navegación): Lista de enlaces para navegar por el sitio -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - hidden: Oculta el contenedor en pantallas pequeñas (menores a 768px)
+            - md:flex: Muestra el contenedor como un flexbox en pantallas medianas y más grandes (768px o más)
+            - items-center: Centra verticalmente los elementos hijos dentro del contenedor
+            - gap-8: Agrega un espacio de 2rem (32px) entre los elementos hijos
+            - text-sm: Establece un tamaño de fuente pequeño (0.875rem) para los enlaces de navegación
+            - font-medium: Aplica un estilo de fuente de peso medio para los enlaces de navegación
+            - text-slate-300: Define el color del texto como un gris claro para los enlaces de navegación
+        -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <a href="#pilares" class="hover:text-white transition-colors">Pilares</a>
+            <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+            <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+        </nav>
+        <!-- Contenedor derecho (Botón de acción): Botón para invitar a los usuarios a 'Empezar un Proyecto' -->
+        <!--
+            Contexto de clases de Tailwind CSS:
+            - flex: Aplica un diseño flexible para alinear los elementos hijos en una sola fila
+            - items-center: Centra verticalmente los elementos hijos dentro del contenedor
+        -->
+        <div class="flex items-center">
+            <!-- Botón de acción: Enlace estilizado como botón para invitar a los usuarios a 'Empezar un Proyecto' -->
+            <!--
+                Contexto de clases de Tailwind CSS:
+                - px-5: Agrega un padding horizontal de 1.25rem (20px) al botón
+                - py-2.5: Agrega un padding vertical de 0.625rem (10px) al botón
+                - rounded-full: Aplica bordes completamente redondeados al botón para darle una apariencia de píldora
+                - text-sm: Establece un tamaño de fuente pequeño (0.875rem) para el texto del botón
+                - font-medium: Aplica un estilo de fuente de peso medio para el texto del botón
+                - text-purple-300: Define el color del texto como púrpura claro para el estado normal del botón
+                - border: Agrega un borde alrededor del botón
+                - border-purple-500/30: Define el color del borde como púrpura con opacidad del 30% para el estado normal del botón
+                - bg-purple-950/20: Establece un color de fondo púrpura oscuro con opacidad del 20% para el estado normal del botón
+                - hover:bg-purple-900/40: Cambia el color de fondo a púrpura más oscuro con opacidad del 40% cuando el usuario pasa el cursor sobre el botón
+                - hover:border-purple-400: Cambia el color del borde a púrpura más claro cuando el usuario pasa el cursor sobre el botón
+                - hover:text-white: Cambia el color del texto a blanco cuando el usuario pasa el cursor sobre el botón
+                - transition-all: Aplica una transición suave a todos los cambios de estilo para mejorar la experiencia visual al interactuar con el botón
+                - shadow-[0_0_15px_rgba(168,85,247,0.15)]: Aplica una sombra personalizada alrededor del botón para darle un efecto de profundidad y resaltar su presencia en la interfaz
+            -->
+            <a 
+                href="#contacto" 
+                class="whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-purple-300 border border-purple-500/30 bg-purple-950/20 hover:bg-purple-900/40 hover:border-purple-400 hover:text-white transition-all shadow-[0_0_15px_rgba(168,85,247,0.15)]"
+            >
+                Empezar Proyecto
+            </a>
+        </div>
+    </div>
+</header>
