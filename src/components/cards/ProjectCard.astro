@@ -1,0 +1,139 @@
+---
+// Sección de código para importar componentes y definir variables (Frontmatter)
+
+// Configuración de los badges
+const badgeOptions = {
+    status: {
+        completed: {
+            label: "Completado",
+            style: "bg-[#052e1a] text-[#86efac]",
+        },
+        inDevelopment: {
+            label: "En Desarrollo",
+            style: "bg-[#172554] text-[#93c5fd]",
+        },
+        onHold: {
+            label: "En Pausa",
+            style: "bg-[#422006] text-[#fcd34d]",
+        },
+        prototype: {
+            label: "Prototipo",
+            style: "bg-[#3b0764] text-[#d8b4fe]",
+        },
+        planned: {
+            label: "Planificado",
+            style: "bg-[#1e293b] text-[#cbd5e1]",
+        },
+        cancelled: {
+            label: "Cancelado",
+            style: "bg-[#450a0a] text-[#fca5a5]",
+        },
+    },
+
+    type: {
+        personal: {
+            label: "Propio",
+            style: "bg-[#1e293b] text-[#cbd5e1]",
+        },
+        academic: {
+            label: "Académico",
+            style: "bg-[#1e293b] text-[#cbd5e1]",
+        },
+        client: {
+            label: "Cliente",
+            style: "bg-[#134e4a] text-[#99f6e4]",
+        },
+    },
+};
+
+// Definimos los tipos permitidos para los proyectos
+type ProjectStatus = keyof typeof badgeOptions.status;
+type ProjectType = keyof typeof badgeOptions.type;
+
+// Definimos la interfaz TypeScript para declarar las propiedades (Props) que recibirá este componente
+interface Props {
+    image: string;
+    status: ProjectStatus;
+    category: string;
+    type: ProjectType;
+    title: string;
+    subtitle: string;
+    description: string;
+    technologies: string[];
+    url?: string;
+}
+
+// Extraemos las propiedades que nos pasen al utilizar este componente
+const {
+    image,
+    status,
+    category,
+    type,
+    title,
+    subtitle,
+    description,
+    technologies,
+    url
+} = Astro.props;
+
+// Badges dinámicos que se mostrarán en la tarjeta
+const badges = [
+    badgeOptions.status[status],
+    badgeOptions.type[type],
+];
+
+// Comprobamos si el proyecto tiene una URL disponible
+const hasUrl = Boolean(url?.trim);
+---
+
+<!-- Contenedor principal de la tarjeta que representa un proyecto -->
+<article class="relative group z-0 rounded-xl border border-[#1e293b] bg-[#111827] transition-all duration-300 hover:z-10 hover:border-violet-500/70 hover:shadow-[0_0_0_1px_rgba(139,92,246,0.35),0_0_12px_3px_rgba(139,92,246,0.18),0_0_24px_6px_rgba(139,92,246,0.10)]">
+
+    <!-- Contenedor de la imagén -->
+    <div class="w-full aspect-[345/185] rounded-t-xl overflow-hidden">
+        <img src={image} class="w-full h-full object-contain"/>
+    </div>
+
+    <!-- Contenedor de la información -->
+    <div class="flex flex-1 flex-col gap-2.5 p-4">
+
+        <!-- Badges informativos -->
+        <div class="flex flex-nowrap items-start gap-1.5">
+
+            <!-- Estado -->
+            <span class={`rounded-md px-2 py-1 text-[10px] font-medium ${badges[0].style}`}>{badges[0].label}</span>
+
+            <!-- Categoría -->
+            <span class="rounded-md bg-[#2e1065] px-2 py-1 text-[10px] font-medium text-[#c4b5fd]">{category}</span>
+
+            <!-- Tipo de proyecto -->
+            <span class={`rounded-md px-2 py-1 text-[10px] font-medium ${badges[1].style}`}>{badges[1].label}</span>
+        </div>
+
+        <!-- Nombre del proyecto -->
+        <h3 class="text-2xl font-bold text-white">{title}</h3>
+
+        <!-- Subtítulo -->
+        <p class="text-sm font-normal text-slate-300">{subtitle}</p>
+
+        <!-- Descripción -->
+        <p class="text-[13px] font-normal text-slate-400">{description}</p>
+
+        <!-- Contenedor de tecnologías utilizadas -->
+        <div class="mt-2 mb-2 flex flex-nowrap gap-1.5">
+
+            {technologies.map((technology) => (
+                <span class="rounded-md border border-slate-700 bg-slate-800 px-2 py-1 text-[11px] font-semibold text-slate-300">{technology}</span>
+            ))}
+                           
+        </div>
+
+        <!-- Enlace al proyecto -->
+        {hasUrl ? (
+            <a href={url} class="mt-auto flex w-full items-center justify-center rounded-md bg-[#7c3aed] px-4 py-4 font-semibold text-white transition-colors duration-300 hover:bg-[#6d28d9]">Ver proyecto</a>
+        ) : (
+            <button type="button" disabled class="mt-auto flex w-full items-center justify-center rounded-md bg-[#1e293b] px-4 py-4 font-semibold text-[#94a3b8]">Ver proyecto</button>
+        )}
+
+    </div>
+</article>
