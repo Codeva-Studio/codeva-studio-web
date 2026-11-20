@@ -1,27 +1,20 @@
 ---
-// ==========================================
-// PÁGINA PRINCIPAL: index.astro
-// ==========================================
+// Página principal
 
-// Importamos el Layout base con HTML y fondo de cuadrícula
+// Importamos las secciones en el orden en que aparecen en pantalla
 import Layout from '../layouts/Layout.astro';
-
-// Importamos el componente de la barra de navegación superior
 import Navbar from '../components/Navbar.astro';
-
-// Importamos el componente de la sección principal (Hero + Pilares)
 import Hero from '../components/Hero.astro';
 import Pillars from '../components/Pillars.astro';
 import Services from '../components/Services.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
-
 ---
 
-<!-- Renderizamos la página envuelta en el Layout base -->
+<!-- Página envuelta en el Layout base -->
 <Layout title="Codeva Studio | Ingeniería de Software & Arquitectura de Alto Rendimiento">
-    
+
     <!-- Barra de navegación fija -->
     <Navbar />
 
