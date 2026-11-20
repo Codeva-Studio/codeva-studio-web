@@ -1,62 +1,50 @@
 ---
-// Sección de código para importar componentes y definir variables (Frontmatter)
+// Layout base de todas las páginas
 
-// Importamos los estilos globales de Tailwind para que reconozca todas las clases
+// Estilos globales del proyecto
 import "../styles/global.css";
 
-// Definimos la interfaz TypeScript para declarar las propiedades (Props) que recibirá este Layout
+// Propiedades que recibe el layout
 interface Props {
-	title: string; // Exigimos que cada página envíe un título personalizado 
+	title: string;
 }
 
-// Extraemos la propiedad 'title' que nos pasen al utilizar este Layout
+// Extrae las props del layout
 const { title } = Astro.props;
 ---
 
-<!-- Plantilla Html + Tailwind CSS -->
-
 <!DOCTYPE html>
-<!-- Habilitamos el modo oscuro y el desplazamiento suave para todos los elementos -->
 <html lang="es" class="dark scroll-smooth">
+
 	<head>
+
+		<!-- Metadatos -->
 		<meta charset="UTF-8"/>
-		<!-- Agregamos una descripción que se mostrará en los resultados de búsqueda -->
 		<meta name="description" content="Codeva Studio - Desarrollo de Software & Arquitectura de Alto Rendimiento"/>
-		<!-- Configuramos el viewport para diseño responsivo -->
 		<meta name="viewport" content="width=device-width"/>
-		<!-- Agregamos el icono de Codeva Studio en la pestaña del navegador -->
+
+		<!-- Favicon del sitio -->
 		<link rel="icon" type="image/png" href="/logo.png"/>
-		<!-- Cargamos fuentes desde Google Fonts -->
-		 <!-- Utilizamos 'preconnect' para mejorar el rendimiento de las conexiones a los servidores de fuentes -->
+
+		<!-- Fuentes de Google para Inter y Fira Code -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<!-- Cargamos las fuentes 'Fira Code' e 'Inter' desde Google Fonts -->
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> 
-		<!-- Inyectamos el título de la página que se mostrará en la pestaña del navegador -->
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+		<!-- Título de la pestaña, recibido por props -->
 		<title>{title}</title>
+
 	</head>
-	<!--
-		Contexto de clases de Tailwind CSS:
-		- bg-[#0b0f17]: Establece un color de fondo personalizado
-		- text-slate-100: Define el color del texto como un gris claro
-		- font-sans: Aplica una fuente sans-serif
-		- antialiased: Habilita el suavizado de fuentes para mejorar la legibilidad
-		- min-h-screen: Asegura que el contenido ocupe al menos la altura completa de la pantalla evita que el contenido se corte en pantallas más pequeñas
-		- selection:bg-purple-500: Cambia el color de fondo del texto seleccionado a un tono púrpura
-		- selection:text-white: Cambia el color del texto seleccionado a blanco
-	-->
-	<body class="bg-[#0b0f17] text-slate-100 font-sans antialiased min-h-screen selection:bg-purple-500 selection:text-white">
-		<!-- Cuadrícula de fondo con degradado progresivo (Grid Pattern) -->
-        <!--
-            Contexto de clases de Tailwind CSS:
-			- fixed inset-0: Fija la capa cubriendo toda la pantalla sin moverse al hacer scroll
-			- bg-[linear-gradient()]: Dibuja las líneas verticales y horizontales de gris tenue (#374151) para formar los cuadros
-			- bg-[size:4rem_4rem]: Define el tamaño de cada cuadro de la cuadrícula (4x4 rems)
-			- [mask-image:linear-gradient(to_bottom,...)]: Aplica una máscara de degradado vertical que mantiene la cuadrícula visible arriba y la va desvaneciendo suavemente hacia abajo sin cortes abruptos
-			- pointer-events-none: Hace que la capa no interfiera con los clics del usuario en botones o enlaces inferiores
-        -->
-        <div class="fixed inset-0 bg-[linear-gradient(to_right,#374151_1px,transparent_1px),linear-gradient(to_bottom,#374151_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_20%,rgba(0,0,0,0)_90%)] pointer-events-none"></div>
-		<!-- Slot es una etiqueta que permite insertar el contenido de las páginas individuales compartiendo el mismo diseño -->
-		<slot /> 
+
+	<!-- Cuerpo de la página que contiene la cuadrícula decorativa y el contenido de cada página -->
+	<body class="bg-base text-slate-100 font-sans antialiased min-h-screen selection:bg-accent-500 selection:text-white">
+
+		<!-- Cuadrícula de fondo con degradado progresivo decorativa y no interactiva -->
+		<div class="fixed inset-0 bg-[linear-gradient(to_right,#374151_1px,transparent_1px),linear-gradient(to_bottom,#374151_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_20%,rgba(0,0,0,0)_90%)] pointer-events-none"></div>
+
+		<!-- Contenido de cada página -->
+		<slot />
+
 	</body>
+
 </html>
