@@ -14,14 +14,14 @@
  * @property {ProjectType} type
  * @property {string} title
  * @property {string} subtitle
- * @property {string} description
+ * @property {str-ing} description
  * @property {string[]} technologies
  * @property {string} [url]
  */
 
 /**
- * Información de los proyectos que aparecen en la sección "Nuestro Trabajo".
- * Cada objeto contiene los datos necesarios para generar una tarjeta.
+ * Información de los proyectos que aparecen en la sección "Nuestro Trabajo"
+ * Cada objeto contiene los datos necesarios para generar una tarjeta
  *
  * @type {Project[]}
  */
@@ -36,7 +36,7 @@ export const projects = [
         // Categoría del proyecto: Desarrollo Web, Desarrollo de software, E-commerce, etc
         category: "Desarrollo Web",
 
-        // Tipo de proyecto: "personal", "academic", "client".
+        // Tipo de proyecto: "personal", "academic", "client"
         type: "personal",
 
         // Nombre principal del proyecto.
@@ -45,14 +45,14 @@ export const projects = [
         // Descripción breve que aparece debajo del título.
         subtitle: "Blog editorial especializado en café",
 
-        // Descripción detallada del proyecto.
+        // Descripción detallada del proyecto
         description:
             "Sitio web editorial dedicado a explorar la cultura, historia, variedades y métodos de preparación del café mediante artículos y guías para los amantes del café.",
 
-        // Tecnologías utilizadas en el desarrollo.
+        // Tecnologías utilizadas en el desarrollo
         technologies: ["Astro", "HTML", "Tailwind CSS", "JavaScript"],
 
-        // Dirección web del proyecto. Propiedad opcional.
+        // Dirección web del proyecto (Propiedad opcional)
         url: "https://coffee-blog-codeva-studio.netlify.app/",
     },
     {

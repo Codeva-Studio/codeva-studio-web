@@ -1,27 +1,110 @@
-/* Importa las utilidades y el motor principal de Tailwind CSS v4 */
+/* Carga Tailwind CSS v4 con sus utilidades base */
 @import "tailwindcss";
 
-/* Inicio de la regla de estilos para anular el autocompletado predeterminado del navegador */
+/* Colores propios del proyecto */
+@theme {
 
-/* Selecciona los campos de texto cuando el navegador los autocompleta */
+  /* Fondo general del sitio */
+  --color-base: #0b0f17;
+
+  /* Escala violeta para los acentos, desde el más claro (50) hasta el más oscuro (950) */
+  --color-accent-50: oklch(0.977 0.014 303.5);
+  --color-accent-100: oklch(0.946 0.033 307.2);
+  --color-accent-200: oklch(0.902 0.063 306.7);
+  --color-accent-300: oklch(0.827 0.119 306.4);
+  --color-accent-400: oklch(0.714 0.203 305.5);
+  --color-accent-500: oklch(0.627 0.265 303.9);
+  --color-accent-600: oklch(0.558 0.288 302.3);
+  --color-accent-700: oklch(0.496 0.265 301.9);
+  --color-accent-800: oklch(0.438 0.218 303.7);
+  --color-accent-900: oklch(0.381 0.176 304.5);
+  --color-accent-950: oklch(0.291 0.149 302.7);
+
+}
+
+/* Fuentes del proyecto, cargadas en Layout.astro */
+@theme {
+
+  /* Inter para el texto general */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Fira Code para etiquetas técnicas y código */
+  --font-mono: "Fira Code", ui-monospace, monospace;
+
+}
+
+/* Clases reutilizables que se usan en varios componentes */
+
+/* Base de las tarjetas: fondo translúcido, borde, desenfoque y sombra */
+@utility card-base {
+
+  @apply relative p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-xl;
+
+}
+
+/* Efecto al pasar el cursor: la tarjeta sube y su borde toma el color de acento */
+@utility card-hover {
+
+  @apply transition-all duration-300 hover:border-accent-500/50 hover:-translate-y-1;
+
+}
+
+/* Contenedor del icono en las tarjetas grandes */
+@utility icon-box {
+
+  @apply w-14 h-14 rounded-xl bg-slate-800/80 border border-slate-700/50 flex items-center justify-center text-accent-400 mb-6;
+
+}
+
+/* Contenedor del icono en los elementos pequeños, como los datos de contacto */
+@utility icon-box-sm {
+
+  @apply w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/50 flex items-center justify-center shrink-0;
+
+}
+
+/* Etiqueta pequeña que aparece encima del título de cada sección */
+@utility section-badge {
+
+  @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-accent-400 font-mono text-xs shadow-sm;
+
+}
+
+/* Título principal de cada sección */
+@utility section-title {
+
+  @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4;
+
+}
+
+/* Texto de presentación debajo del título de cada sección */
+@utility section-desc {
+
+  @apply text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed;
+
+}
+
+/* Etiqueta de tecnología que aparece dentro de las tarjetas */
+@utility tech-badge {
+
+  @apply px-2 py-1 rounded-md bg-slate-800/80 border border-slate-700/50 text-slate-300 font-mono text-xs shadow-sm;
+
+}
+
+/* Campos del formulario de contacto */
+@utility form-input {
+
+  @apply w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-white placeholder-slate-600 focus:outline-none focus:border-accent-500/80 focus:ring-1 focus:ring-accent-500/80 transition-all duration-300 text-sm;
+}
+
+/* Evita que el navegador pinte de blanco los campos con texto autocompletado */
 input:-webkit-autofill,
-/* Aplica los mismos estilos al pasar el cursor sobre un campo de texto autocompletado */
-input:-webkit-autofill:hover, 
-/* Aplica los mismos estilos al seleccionar o hacer foco en un campo de texto autocompletado */
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-/* Selecciona los bloques de texto multilínea (textarea) cuando se autocompletan */
 textarea:-webkit-autofill,
-/* Aplica los mismos estilos al pasar el cursor sobre un textarea autocompletado */
 textarea:-webkit-autofill:hover,
-/* Aplica los mismos estilos al enfocar un textarea autocompletado */
 textarea:-webkit-autofill:focus {
-  
-  /* Fuerza que el texto dentro del input sea blanco, sobreescribiendo el texto negro del navegador */
   -webkit-text-fill-color: #ffffff !important;
-  
-  /* Proyecta una sombra interna gigante del color slate-950 (#020617) para tapar el fondo amarillo/blanco nativo del autocompletado */
-  -webkit-box-shadow: 0 0 0px 1000px #020617 inset !important; /* #020617 equivale al tono slate-950 */
-  
-  /* Retarda la animación de cambio de color del navegador por 5000 segundos para evitar que restablezca el fondo blanco */
+  -webkit-box-shadow: 0 0 0px 1000px #020617 inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
