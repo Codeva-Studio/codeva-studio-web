@@ -14,14 +14,14 @@
  * @property {ProjectType} type
  * @property {string} title
  * @property {string} subtitle
- * @property {string} description
+ * @property {str-ing} description
  * @property {string[]} technologies
  * @property {string} [url]
  */
 
 /**
- * Información de los proyectos que aparecen en la sección "Nuestro Trabajo".
- * Cada objeto contiene los datos necesarios para generar una tarjeta.
+ * Información de los proyectos que aparecen en la sección "Nuestro Trabajo"
+ * Cada objeto contiene los datos necesarios para generar una tarjeta
  *
  * @type {Project[]}
  */
