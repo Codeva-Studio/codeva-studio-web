@@ -1,6 +1,4 @@
 ---
-// Sección de código para importar componentes y definir variables (Frontmatter)
-
 // Importamos el componente para mostrar cada proyecto
 import ProjectCard from "../components/cards/ProjectCard.astro";
 
@@ -9,15 +7,13 @@ import { projects } from "../data/projects.js";
 ---
 
 <!-- Sección principal de Proyectos -->
-<section
-    id="proyectos"
-    class="relative z-10 mx-auto flex w-full flex-col gap-4 scroll-mt-24 px-6 md:gap-8 lg:gap-8"
->
+<section id="proyectos" class="relative z-10 mx-auto flex w-full flex-col gap-4 scroll-mt-24 px-6 md:gap-8 lg:gap-8">
+
     <!-- Encabezado de la sección -->
     <div class="flex flex-col items-center gap-4 text-center md:gap-8 lg:gap-8">
 
         <!-- Badge representativo de la sección -->
-        <span class="rounded-lg border border-[#1d293d] bg-[#0f172b]/80 px-3.5 py-1 font-mono text-sm text-[#c27aff]">
+        <span class="rounded-lg border border-slate-800 bg-slate-950/80 px-3.5 py-1 font-mono text-sm text-accent-400">
             Nuestro Trabajo // Codeva Studio
         </span>
 
@@ -27,7 +23,7 @@ import { projects } from "../data/projects.js";
         </h2>
 
         <!-- Párrafo descriptivo de la sección -->
-        <p class="max-w-xl text-sm font-medium text-[#90a1b9] md:text-base lg:text-lg">
+        <p class="max-w-xl text-sm font-medium text-slate-400 md:text-base lg:text-lg">
             Conoce algunos de nuestros proyectos y descubre cómo aplicamos ingeniería, diseño y tecnología para crear soluciones digitales funcionales, eficientes y escalables.
         </p>
 
@@ -36,9 +32,13 @@ import { projects } from "../data/projects.js";
     <!-- Cuadrícula de proyectos -->
     <div class="mx-auto grid w-full max-w-3xl grid-cols-1 gap-6 md:grid-cols-2">
 
-        {projects.map((project) => (
-            <ProjectCard {...project} />
-        ))}
-
+        <!-- Renderizamos una tarjeta por cada proyecto definido -->
+        {
+            projects.map((project) => (
+                <ProjectCard {...project} />
+            ))
+        }
+        
     </div>
+
 </section>
