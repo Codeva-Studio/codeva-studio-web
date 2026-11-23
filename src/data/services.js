@@ -1,16 +1,16 @@
 // Datos de los servicios ofrecidos por Codeva Studio
 export const services = [
     {
-        // Título principal del servicio.
+        // Título principal del servicio
         title: "Desarrollo Web & Plataformas",
 
-        // Descripción detallada del servicio.
+        // Descripción detallada del servicio
         description: "Sitios web y aplicaciones de alta velocidad diseñados para captar clientes, posicionar tu marca y digitalizar los procesos clave de tu empresa.",
 
-        // Tecnologías utilizadas en el servicio.
+        // Tecnologías utilizadas en el servicio
         technologies: ["Astro", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
 
-        // Ruta SVG del icono que representa al servicio.
+        // Ruta SVG del icono que representa al servicio
         iconPath: "M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0 M3.6 9h16.8 M3.6 15h16.8 M11.5 3a17 17 0 0 0 0 18 M12.5 3a17 17 0 0 1 0 18"
     },
     {
