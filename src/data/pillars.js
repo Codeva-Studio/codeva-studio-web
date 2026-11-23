@@ -1,5 +1,4 @@
 // Información de los pilares que aparecen en la sección "Nuestros Pilares"
-
 export const pillars = [
     {
         // Título principal del pilar.
